@@ -7,6 +7,9 @@ syn match url '\[\[.*\]\]'
 syn match emphasisTag '<em>.*</em>'
 syn match strongTag '<strong>.*</strong>'
 
+syn match emphasis '\*.*\*'
+syn match strong '\*\*.*\*\*'
+
 syn region Comment start="<comment>" end="</comment>"
 
 hi def Emphasis term=italic cterm=italic gui=italic
@@ -17,5 +20,7 @@ hi def link footnote Underlined
 hi def link header Title
 hi def link separator Delimiter
 hi def link url Underlined
+hi def link emphasis Emphasis
+hi def link strong Strong
 hi def link emphasisTag Emphasis
 hi def link strongTag Strong
