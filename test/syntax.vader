@@ -1,0 +1,17 @@
+Given muse;
+* Foo
+
+Execute (header):
+  AssertEqual SyntaxOf('Foo'), 'header'
+
+Given muse;
+*emphasized*
+
+Execute (emphasis):
+  AssertEqual SyntaxOf('emphasized'), 'emphasis'
+
+Given muse;
+**strong**
+
+Execute (strong):
+  AssertEqual SyntaxOf('strong'), 'strong'
