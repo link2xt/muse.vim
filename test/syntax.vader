@@ -15,3 +15,9 @@ Given muse;
 
 Execute (strong):
   AssertEqual SyntaxOf('strong'), 'strong'
+
+Given muse;
+; This is a comment
+
+Execute (comment):
+  AssertEqual SyntaxOf('This is a comment'), 'Comment'

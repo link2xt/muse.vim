@@ -10,6 +10,7 @@ syn match strongTag '<strong>.*</strong>'
 syn match emphasis '\*[^*].\{-}\*'
 syn match strong '\*\*[^*].\{-}\*\*'
 
+syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
 
 hi def Emphasis term=italic cterm=italic gui=italic
