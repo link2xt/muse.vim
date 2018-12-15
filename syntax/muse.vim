@@ -4,6 +4,8 @@ syn match header '^\*\+ .*'
 syn match separator '^----\+'
 syn match url '\[\[.*\]\]'
 
+syn region Comment start="<comment>" end="</comment>"
+
 hi def link directive PreProc
 hi def link footnote Underlined
 hi def link header Title
