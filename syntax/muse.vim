@@ -1,7 +1,7 @@
 syn match directive '^#[a-zA-Z]* .*'
 syn match footnote '\[[0-9]*\]'
-syn match header '^\*\** .*'
-syn match separator '^-----*'
+syn match header '^\*\+ .*'
+syn match separator '^----\+'
 syn match url '\[\[.*\]\]'
 
 hi def link directive PreProc
