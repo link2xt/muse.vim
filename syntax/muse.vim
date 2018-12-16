@@ -4,11 +4,11 @@ syn match header '^\*\+ .*'
 syn match separator '^----\+'
 syn match url '\[\[.*\]\]'
 
-syn match emphasisTag '<em>.*</em>'
-syn match strongTag '<strong>.*</strong>'
+syn match emphasisTag '<em>\_.*</em>'
+syn match strongTag '<strong>\_.*</strong>'
 
-syn match emphasis '\*[^*].\{-}\*'
-syn match strong '\*\*[^*].\{-}\*\*'
+syn match emphasis '\*[^*]\_.\{-}\*'
+syn match strong '\*\*[^*]\_.\{-}\*\*'
 
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"

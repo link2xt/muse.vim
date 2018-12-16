@@ -17,6 +17,16 @@ Execute (strong):
   AssertEqual SyntaxOf('strong'), 'strong'
 
 Given muse;
+foo *bar
+bat* baz
+
+Execute (multiline emphasis);
+  AssertNotEqual SyntaxOf('foo'), 'emphasis'
+  AssertEqual SyntaxOf('bar'), 'emphasis'
+  AssertEqual SyntaxOf('bat'), 'emphasis'
+  AssertNotEqual SyntaxOf('baz'), 'emphasis'
+
+Given muse;
 ; This is a comment
 
 Execute (comment):
