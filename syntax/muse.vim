@@ -2,7 +2,7 @@ syn match directive '^#[a-zA-Z]* .*'
 syn match footnote '\[[0-9]*\]'
 syn match header '^\*\+ .*'
 syn match separator '^----\+'
-syn match url '\[\[.*\]\]'
+syn match url '\[\[\_.\{-}\]\]'
 
 syn match emphasisTag '<em>\_.*</em>'
 syn match strongTag '<strong>\_.*</strong>'
