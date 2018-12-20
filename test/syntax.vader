@@ -17,6 +17,12 @@ Execute (strong):
   AssertEqual SyntaxOf('strong'), 'strong'
 
 Given muse;
+This is * not emphasized*.
+
+Execute (space is not allowed after opening emphasis *):
+  AssertNotEqual SyntaxOf('not emphasized'), 'emphasis'
+
+Given muse;
 foo *bar
 bat* baz
 

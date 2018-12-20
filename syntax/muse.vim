@@ -7,8 +7,8 @@ syn match url '\[\[\_.\{-}\]\]'
 syn match emphasisTag '<em>\_.*</em>'
 syn match strongTag '<strong>\_.*</strong>'
 
-syn match emphasis '\*[^*]\_.\{-}\*'
-syn match strong '\*\*[^*]\_.\{-}\*\*'
+syn match emphasis '\*[^* ]\_.\{-}\*'
+syn match strong '\*\*[^* ]\_.\{-}\*\*'
 
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
