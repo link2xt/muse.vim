@@ -14,6 +14,9 @@ syn match strong '\*\*[^* ]\_.\{-}\*\*'
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
 syn region example start="<example>" end="</example>"
+syn region verbatim start="<verbatim>" end="</verbatim>"
+syn region code start="=" end="="
+syn region code start="<code>" end="</code>"
 syn region example start="{{{" end="}}}"
 
 hi def Emphasis term=italic cterm=italic gui=italic
@@ -28,4 +31,6 @@ hi def link emphasis Emphasis
 hi def link strong Strong
 hi def link emphasisTag Emphasis
 hi def link strongTag Strong
+hi def link verbatim Comment
 hi def link example Comment
+hi def link code Comment

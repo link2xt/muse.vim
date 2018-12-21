@@ -69,3 +69,27 @@ Execute (lightweight <example> markup):
   AssertEqual SyntaxOf('foo'), 'example'
   AssertEqual SyntaxOf('bar'), 'example'
   AssertEqual SyntaxOf('baz'), 'example'
+
+Given muse;
+<verbatim>foo <em>bar</em> baz</verbatim>
+
+Execute (verbatim):
+  AssertEqual SyntaxOf('foo'), 'verbatim'
+  AssertEqual SyntaxOf('bar'), 'verbatim'
+  AssertEqual SyntaxOf('baz'), 'verbatim'
+
+Given muse;
+<code>foo <em>bar</em> baz</code>
+
+Execute (code tag):
+  AssertEqual SyntaxOf('foo'), 'code'
+  AssertEqual SyntaxOf('bar'), 'code'
+  AssertEqual SyntaxOf('baz'), 'code'
+
+Given muse;
+=foo <em>bar</em> baz=
+
+Execute (lightweight code markup):
+  AssertEqual SyntaxOf('foo'), 'code'
+  AssertEqual SyntaxOf('bar'), 'code'
+  AssertEqual SyntaxOf('baz'), 'code'
