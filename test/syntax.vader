@@ -57,3 +57,15 @@ Execute (<example> tag):
   AssertEqual SyntaxOf('foo'), 'example'
   AssertEqual SyntaxOf('bar'), 'example'
   AssertEqual SyntaxOf('baz'), 'example'
+
+Given muse;
+{{{
+foo
+<em>bar</em>
+baz
+}}}
+
+Execute (lightweight <example> markup):
+  AssertEqual SyntaxOf('foo'), 'example'
+  AssertEqual SyntaxOf('bar'), 'example'
+  AssertEqual SyntaxOf('baz'), 'example'

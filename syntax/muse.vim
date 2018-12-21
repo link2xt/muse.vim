@@ -14,6 +14,7 @@ syn match strong '\*\*[^* ]\_.\{-}\*\*'
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
 syn region example start="<example>" end="</example>"
+syn region example start="{{{" end="}}}"
 
 hi def Emphasis term=italic cterm=italic gui=italic
 hi def Strong   term=bold   cterm=bold   gui=bold
