@@ -45,3 +45,15 @@ Execute (<em> tag is not greedy):
   AssertEqual SyntaxOf('foo'), 'emphasisTag'
   AssertNotEqual SyntaxOf('bar'), 'emphasisTag'
   AssertEqual SyntaxOf('baz'), 'emphasisTag'
+
+Given muse;
+<example>
+foo
+<em>bar</em>
+baz
+</example>
+
+Execute (<example> tag):
+  AssertEqual SyntaxOf('foo'), 'example'
+  AssertEqual SyntaxOf('bar'), 'example'
+  AssertEqual SyntaxOf('baz'), 'example'
