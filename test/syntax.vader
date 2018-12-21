@@ -37,3 +37,11 @@ Given muse;
 
 Execute (comment):
   AssertEqual SyntaxOf('This is a comment'), 'Comment'
+
+Given muse;
+<em>foo</em> bar <em>baz</em>
+
+Execute (<em> tag is not greedy):
+  AssertEqual SyntaxOf('foo'), 'emphasisTag'
+  AssertNotEqual SyntaxOf('bar'), 'emphasisTag'
+  AssertEqual SyntaxOf('baz'), 'emphasisTag'
