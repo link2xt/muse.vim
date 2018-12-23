@@ -1,6 +1,6 @@
 syn match directive '^#[a-zA-Z]* .*'
-syn match footnote '\[[0-9]*\]'
-syn match footnote '{[0-9]*}' " secondary footnotes
+syn match footnote '\[[0-9]*\]'hs=s+1,he=e-1
+syn match footnote '{[0-9]*}'hs=s+1,he=e-1 " secondary footnotes
 syn match header '^\*\+ .*'
 syn match separator '^----\+'
 syn match url '\[\[\_.\{-}\]\]'
