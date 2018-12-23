@@ -93,3 +93,9 @@ Execute (lightweight code markup):
   AssertEqual SyntaxOf('foo'), 'code'
   AssertEqual SyntaxOf('bar'), 'code'
   AssertEqual SyntaxOf('baz'), 'code'
+
+Given muse;
+foo~~bar
+
+Execute (non-breaking space):
+  AssertEqual SyntaxOf('\~\~'), 'nbsp'
