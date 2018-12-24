@@ -3,7 +3,7 @@ syn match footnote '\[[0-9]*\]'hs=s+1,he=e-1
 syn match footnote '{[0-9]*}'hs=s+1,he=e-1 " secondary footnotes
 syn match header '^\*\+ .*'
 syn match separator '^----\+'
-syn match url '\[\[\_.\{-}\]\]'
+syn region url start='\[\[' end='\]\]'
 
 syn region emphasisTag start='<em>' end='</em>'
 syn region strongTag start='<strong>' end='</strong>'
