@@ -101,6 +101,12 @@ Execute (lightweight code markup):
   AssertEqual SyntaxOf('baz'), 'code'
 
 Given muse;
+= not code=
+
+Execute (no space after opening =):
+  AssertEqual SyntaxOf('not code'), ''
+
+Given muse;
 foo~~bar
 
 Execute (non-breaking space):

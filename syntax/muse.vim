@@ -16,7 +16,7 @@ syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
 syn region example start="<example>" end="</example>"
 syn region verbatim start="<verbatim>" end="</verbatim>"
-syn region code start="=" end="="
+syn region code start="=[^= ]" end="="
 syn region code start="<code>" end="</code>"
 syn region example start="{{{" end="}}}"
 syn match nbsp '\~\~'
