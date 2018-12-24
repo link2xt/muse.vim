@@ -1,42 +1,42 @@
-syn match directive '^#[a-zA-Z]* .*'
-syn match footnote '\[[0-9]*\]'hs=s+1,he=e-1
-syn match footnote '{[0-9]*}'hs=s+1,he=e-1 " secondary footnotes
-syn match header '^\*\+ .*'
-syn match separator '^----\+'
-syn region url start='\[\[' end='\]\]'
+syntax match directive '^#[a-zA-Z]* .*'
+syntax match footnote '\[[0-9]*\]'hs=s+1,he=e-1
+syntax match footnote '{[0-9]*}'hs=s+1,he=e-1 " secondary footnotes
+syntax match header '^\*\+ .*'
+syntax match separator '^----\+'
+syntax region url start='\[\[' end='\]\]'
 
-syn region emphasisTag start='<em>' end='</em>'
-syn region strongTag start='<strong>' end='</strong>'
+syntax region emphasisTag start='<em>' end='</em>'
+syntax region strongTag start='<strong>' end='</strong>'
 
-syn region strong start='\*\*[^* ]' end='\*\*'
-syn region emphasis start='\*[^* ]' end='\*'
-syn region strongEmphasis start='\*\*\*[^* ]' end='\*\*\*'
+syntax region strong start='\*\*[^* ]' end='\*\*'
+syntax region emphasis start='\*[^* ]' end='\*'
+syntax region strongEmphasis start='\*\*\*[^* ]' end='\*\*\*'
 
-syn match Comment '^;.*'
-syn region Comment start="<comment>" end="</comment>"
-syn region example start="<example>" end="</example>"
-syn region verbatim start="<verbatim>" end="</verbatim>"
-syn region code start="=[^= ]" end="="
-syn region code start="<code>" end="</code>"
-syn region example start="{{{" end="}}}"
-syn match nbsp '\~\~'
+syntax match Comment '^;.*'
+syntax region Comment start="<comment>" end="</comment>"
+syntax region example start="<example>" end="</example>"
+syntax region verbatim start="<verbatim>" end="</verbatim>"
+syntax region code start="=[^= ]" end="="
+syntax region code start="<code>" end="</code>"
+syntax region example start="{{{" end="}}}"
+syntax match nbsp '\~\~'
 
-syn region Section start="^\*\+ " end="^\*\+ \&" fold contains=TOP
+syntax region Section start="^\*\+ " end="^\*\+ \&" fold contains=TOP
 
-hi def Emphasis        term=italic      cterm=italic      gui=italic
-hi def Strong          term=bold        cterm=bold        gui=bold
-hi def StrongEmphasis  term=bold,italic cterm=bold,italic gui=bold,italic
+highlight default Emphasis        term=italic      cterm=italic      gui=italic
+highlight default Strong          term=bold        cterm=bold        gui=bold
+highlight default StrongEmphasis  term=bold,italic cterm=bold,italic gui=bold,italic
 
-hi def link directive PreProc
-hi def link footnote Underlined
-hi def link header Title
-hi def link separator Delimiter
-hi def link url Underlined
-hi def link emphasis Emphasis
-hi def link strong Strong
-hi def link emphasisTag Emphasis
-hi def link strongTag Strong
-hi def link verbatim Comment
-hi def link example Comment
-hi def link code Comment
-hi def link nbsp Delimiter
+highlight default link directive PreProc
+highlight default link footnote Underlined
+highlight default link header Title
+highlight default link separator Delimiter
+highlight default link url Underlined
+highlight default link emphasis Emphasis
+highlight default link strong Strong
+highlight default link emphasisTag Emphasis
+highlight default link strongTag Strong
+highlight default link verbatim Comment
+highlight default link example Comment
+highlight default link code Comment
+highlight default link nbsp Delimiter
