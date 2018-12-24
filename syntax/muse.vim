@@ -10,6 +10,7 @@ syn region strongTag start='<strong>' end='</strong>'
 
 syn region strong start='\*\*[^* ]' end='\*\*'
 syn region emphasis start='\*[^* ]' end='\*'
+syn region strongEmphasis start='\*\*\*[^* ]' end='\*\*\*'
 
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
@@ -20,8 +21,10 @@ syn region code start="<code>" end="</code>"
 syn region example start="{{{" end="}}}"
 syn match nbsp '\~\~'
 
-hi def Emphasis term=italic cterm=italic gui=italic
-hi def Strong   term=bold   cterm=bold   gui=bold
+
+hi def Emphasis        term=italic      cterm=italic      gui=italic
+hi def Strong          term=bold        cterm=bold        gui=bold
+hi def StrongEmphasis  term=bold,italic cterm=bold,italic gui=bold,italic
 
 hi def link directive PreProc
 hi def link footnote Underlined
