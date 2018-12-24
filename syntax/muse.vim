@@ -5,11 +5,11 @@ syn match header '^\*\+ .*'
 syn match separator '^----\+'
 syn match url '\[\[\_.\{-}\]\]'
 
-syn match emphasisTag '<em>\_.\{-}</em>'
-syn match strongTag '<strong>\_.\{-}</strong>'
+syn region emphasisTag start='<em>' end='</em>'
+syn region strongTag start='<strong>' end='</strong>'
 
-syn match emphasis '\*[^* ]\_.\{-}\*'
-syn match strong '\*\*[^* ]\_.\{-}\*\*'
+syn region strong start='\*\*[^* ]' end='\*\*'
+syn region emphasis start='\*[^* ]' end='\*'
 
 syn match Comment '^;.*'
 syn region Comment start="<comment>" end="</comment>"
