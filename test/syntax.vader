@@ -1,14 +1,68 @@
 Given muse;
-* Foo
+* Part
 
-Execute (header):
-  AssertEqual SyntaxOf('Foo'), 'header'
+Execute (part header):
+  AssertEqual SyntaxOf('Part'), 'header'
+
+Given muse;
+** Chapter
+
+Execute (chapter header):
+  AssertEqual SyntaxOf('Chapter'), 'header'
+
+Given muse;
+*** Section
+
+Execute (section header):
+  AssertEqual SyntaxOf('Section'), 'header'
+
+Given muse;
+**** Subsection
+
+Execute (subsection header):
+  AssertEqual SyntaxOf('Subsection'), 'header'
+
+Given muse;
+***** Subsubsection
+
+Execute (subsubsection header):
+  AssertEqual SyntaxOf('Subsubsection'), 'header'
 
 Given muse;
 *emphasized*
 
 Execute (emphasis):
   AssertEqual SyntaxOf('emphasized'), 'emphasis'
+
+Given muse;
+*
+foo*
+
+Execute (newline in the beginning of emphasis):
+  AssertNotEqual SyntaxOf('foo'), 'emphasis'
+
+" We can't make simple test,
+" similar to the previous one,
+" because Vim allows any region to end with the end of file.
+Given muse;
+*foo
+*
+bar*
+baz
+
+" Here we check that "*" on the second line
+" does not end emphasis by requiring that "bar"
+" is emphasized.
+Execute (newline in the end of emphasis):
+  AssertEqual SyntaxOf('foo'), 'emphasis'
+  AssertEqual SyntaxOf('bar'), 'emphasis'
+  AssertNotEqual SyntaxOf('baz'), 'emphasis'
+
+Given muse;
+*x*
+
+Execute (emphasized letter):
+  AssertEqual SyntaxOf('x'), 'emphasis'
 
 Given muse;
 **strong**
