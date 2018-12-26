@@ -73,6 +73,15 @@ Execute (emphasized letter):
   AssertEqual SyntaxOf('x'), 'emphasis'
 
 Given muse;
+Foo *bar*0 bat* baz
+
+Execute (not end of emphasis if followed by digit):
+  AssertEqual SyntaxOf('Foo'), ''
+  AssertEqual SyntaxOf('bar'), 'emphasis'
+  AssertEqual SyntaxOf('bat'), 'emphasis'
+  AssertEqual SyntaxOf('baz'), ''
+
+Given muse;
 **strong**
 
 Execute (strong):
