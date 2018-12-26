@@ -185,9 +185,11 @@ Given muse;
 =foo <em>bar</em> baz=
 
 Execute (lightweight code markup):
+  AssertEqual SyntaxOf('^='), ''
   AssertEqual SyntaxOf('foo'), 'code'
   AssertEqual SyntaxOf('bar'), 'code'
   AssertEqual SyntaxOf('baz'), 'code'
+  AssertEqual SyntaxOf('=$'), ''
 
 Given muse;
 = not code=
