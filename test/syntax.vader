@@ -29,6 +29,14 @@ Execute (subsubsection header):
   AssertEqual SyntaxOf('Subsubsection'), 'header'
 
 Given muse;
+<quote>
+* Not a header
+</quote>
+
+Execute (no headers in quotes):
+  AssertEqual SyntaxOf('Not a header'), 'quote'
+
+Given muse;
 *emphasized*
 
 Execute (emphasis):

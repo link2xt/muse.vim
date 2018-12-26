@@ -18,6 +18,7 @@ syntax region example start="<example>" end="</example>"
 syntax region verbatim start="<verbatim>" end="</verbatim>"
 syntax region code start="=[^= ]"hs=e end="=\($\|[^[:alnum:]]\)"he=s
 syntax region code start="<code>" end="</code>"
+syntax region quote start="<quote>" end="</quote>"
 syntax region example start="{{{" end="}}}"
 syntax match nbsp '\~\~'
 
