@@ -104,7 +104,25 @@ Given muse;
 ; This is a comment
 
 Execute (comment):
-  AssertEqual SyntaxOf('This is a comment'), 'Comment'
+  AssertEqual SyntaxOf('; This is a comment'), 'Comment'
+
+Given muse;
+;
+
+Execute (empty comment):
+  AssertEqual SyntaxOf(';'), 'Comment'
+
+Given muse;
+ ; Not a comment
+
+Execute (no whitespace before comments):
+  AssertEqual SyntaxOf('Not a comment'), ''
+
+Given muse;
+;Not a comment
+
+Execute (space is required after comment semicolon):
+  AssertEqual SyntaxOf('Not a comment'), ''
 
 Given muse;
 <em>foo</em> bar <em>baz</em>

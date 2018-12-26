@@ -12,7 +12,8 @@ syntax region emphasis       start='\(^\|[^*[:alnum:]]\)\*[^* ]'hs=e     end='\S
 syntax region strong         start='\(^\|[^*[:alnum:]]\)\*\*[^* ]'hs=e   end='\S\*\*'he=s
 syntax region strongEmphasis start='\(^\|[^*[:alnum:]]\)\*\*\*[^* ]'hs=e end='\S\*\*\*'he=s
 
-syntax match Comment '^;.*'
+syntax match Comment '^;$'
+syntax match Comment '^; .*'
 syntax region Comment start="<comment>" end="</comment>"
 syntax region example start="<example>" end="</example>"
 syntax region verbatim start="<verbatim>" end="</verbatim>"
