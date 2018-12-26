@@ -161,6 +161,15 @@ Execute (no space after opening =):
   AssertEqual SyntaxOf('not code'), ''
 
 Given muse;
+Foo =bar=0 bat= baz
+
+Execute (not end of code if followed by digit):
+  AssertEqual SyntaxOf('Foo'), ''
+  AssertEqual SyntaxOf('bar'), 'code'
+  AssertEqual SyntaxOf('bat'), 'code'
+  AssertEqual SyntaxOf('baz'), ''
+
+Given muse;
 foo~~bar
 
 Execute (non-breaking space):
