@@ -67,10 +67,12 @@ Execute (newline in the end of emphasis):
   AssertNotEqual SyntaxOf('baz'), 'emphasis'
 
 Given muse;
-*x*
+Foo *x* bar
 
 Execute (emphasized letter):
+  AssertNotEqual SyntaxOf('Foo'), 'emphasis'
   AssertEqual SyntaxOf('x'), 'emphasis'
+  AssertNotEqual SyntaxOf('bar'), 'emphasis'
 
 Given muse;
 Foo *bar*0 bat* baz
@@ -88,6 +90,14 @@ Execute (strong):
   AssertEqual SyntaxOf('strong'), 'strong'
 
 Given muse;
+Foo **x** bar
+
+Execute (strong letter):
+  AssertNotEqual SyntaxOf('Foo'), 'strong'
+  AssertEqual SyntaxOf('x'), 'strong'
+  AssertNotEqual SyntaxOf('bar'), 'strong'
+
+Given muse;
 ***strong emphasis***
 
 Execute (strong emphasis):
@@ -95,6 +105,14 @@ Execute (strong emphasis):
 
 Given muse;
 This is * not emphasized*.
+
+Given muse;
+Foo ***x*** bar
+
+Execute (strong emphasis letter):
+  AssertNotEqual SyntaxOf('Foo'), 'strongEmphasis'
+  AssertEqual SyntaxOf('x'), 'strongEmphasis'
+  AssertNotEqual SyntaxOf('bar'), 'strongEmphasis'
 
 Execute (space is not allowed after opening emphasis *):
   AssertNotEqual SyntaxOf('not emphasized'), 'emphasis'

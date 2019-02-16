@@ -8,9 +8,9 @@ syntax region url start='\[\[' end='\]\]'
 syntax region emphasisTag start='<em>' end='</em>'
 syntax region strongTag start='<strong>' end='</strong>'
 
-syntax region emphasis       start='\(^\|[^*[:alnum:]]\)\*[^* ]'hs=e     end='\S\*\($\|[^*[:alnum:]]\)'he=s
-syntax region strong         start='\(^\|[^*[:alnum:]]\)\*\*[^* ]'hs=e   end='\S\*\*\($\|[^*[:alnum:]]\)'he=s
-syntax region strongEmphasis start='\(^\|[^*[:alnum:]]\)\*\*\*[^* ]'hs=e end='\S\*\*\*\($\|[^*[:alnum:]]\)'he=s
+syntax region emphasis       start='\(^\|[^*[:alnum:]]\)\*[^* ]\@='hs=e+1     end='\S\*\($\|[^*[:alnum:]]\)'he=s
+syntax region strong         start='\(^\|[^*[:alnum:]]\)\*\*[^* ]\@='hs=e+1   end='\S\*\*\($\|[^*[:alnum:]]\)'he=s
+syntax region strongEmphasis start='\(^\|[^*[:alnum:]]\)\*\*\*[^* ]\@='hs=e+1 end='\S\*\*\*\($\|[^*[:alnum:]]\)'he=s
 
 syntax match Comment '^;$'
 syntax match Comment '^; .*'
